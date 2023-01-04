@@ -1,0 +1,16 @@
+---
+# defaults file for gcp_ocp_deployment
+
+## GCP account / project specific variables.
+
+# These shouldn't be populated here, rather they are documented
+# here as a template for further playbooks.
+
+# This is based on the Ansible GCP documentation here
+# https://docs.ansible.com/ansible/latest/scenario_guides/guide_gce.html
+
+gcp_project: "my-project"
+gcp_cred_kind: serviceaccount
+gcp_cred_file: "/home/my_account.json"
+zone: "us-central1-a"
+region: "us-central1"
