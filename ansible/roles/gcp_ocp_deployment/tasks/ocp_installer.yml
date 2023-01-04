@@ -1,0 +1,3 @@
+- name: Placeholder debug stub.
+  ansible.builtin.debug:
+    msg: "Download the the OCP installer"

@@ -1,0 +1,3 @@
+- name: Placeholder debug stub.
+  ansible.builtin.debug:
+    msg: "GCP Project creation step"

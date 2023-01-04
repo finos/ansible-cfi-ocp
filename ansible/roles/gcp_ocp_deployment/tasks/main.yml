@@ -1,2 +1,33 @@
 ---
+## We are following the documentation here
+# https://github.com/finos/compliant-financial-infrastructure/blob/dev/accelerators/kubernetes/ocp/gcp/01_cluster_installation/cluster_installation.md
+
 # tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: gcp_project.yml
+
+# tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: gcp_dns.yml
+
+# tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: gcp_api.yml
+
+# tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: gcp_quotas.yml
+
+# tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: gcp_service_accounts.yml
+
+# tasks file for gcp_ocp_deployment
+- name: Pulling in the GCP project build tasks
+  ansible.builtin.import_tasks:
+    file: ocp_installer.yml

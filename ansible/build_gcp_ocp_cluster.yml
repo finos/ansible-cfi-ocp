@@ -1,0 +1,5 @@
+---
+# Just a stub playbook to call the GCP role.
+- hosts: localhost
+  roles:
+    - role: "gcp_ocp_deployment"
