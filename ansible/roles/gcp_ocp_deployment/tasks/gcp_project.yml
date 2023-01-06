@@ -1,3 +1,20 @@
 - name: Placeholder debug stub.
   ansible.builtin.debug:
-    msg: "GCP Project creation step"
+    msg:
+      - "GCP Project step"
+      - "Variables used"
+      - "Project name: {{ gcp_project_name }}"
+      - "Project id: {{ gcp_project_id }}"
+      - "Parent org ID: {{ gcp_organization_id }}"
+
+- name: Check if project already exists
+  google.cloud.gcp_resourcemanager_project:
+    name: "{{ gcp_project_name }}"
+    id: "{{ gcp_project_id }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    parent:
+      type: organization
+      id: "{{ gcp_organization_id }}"
+    state: present
+  ignore_errors: true
