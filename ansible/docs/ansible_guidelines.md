@@ -39,4 +39,16 @@ These will be the primary deployment roles for deploying OCP onto each platform.
 When using roles, we want to have a standard set of role variables that we can override in order to influence the behaviour of a specific role.
 
 ### Deployment role variables
-As each deployment role for OCP will require 
+As each deployment role for OCP will need different variables (GCP needs project information, AWS needs a VPC or Organisation).
+
+To help end users, within the role we should define a safe set of defaults to be used in the role defaults file. 
+
+Good reasons for doing this are that 
+* A safe set of defaults for users unfamiliar with the role
+* Role defaults have the lowest order of precedence, so can be overridden in a multitude of levels.
+
+The role defaults file can be found here.
+
+    role/defaults/main.yml
+
+#### Google Cloud Platform
