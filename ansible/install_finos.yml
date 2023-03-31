@@ -1,0 +1,8 @@
+---
+# Just a stub playbook to call the GCP role.
+- hosts: localhost
+  roles:
+    - role: "gc_ocp_prereqs"
+    - role: "gc_ocp_install"
+    - role: "gc_ocp_postinstall"
+    - role: "gc_ocp_uninstall"

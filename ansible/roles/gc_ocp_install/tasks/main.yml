@@ -1,0 +1,22 @@
+---
+# tasks file for gc_ocp_install
+- name: Pull the installer
+  debug:
+    msg:  "test"
+
+- name: Create the VM
+  debug:
+    msg:  "test"
+
+- name: Run OCP installer
+  debug:
+    msg:  "test"
+
+- name: Remove VM after installer
+  debug:
+    msg:  "test"
+
+- name: Remove object store 
+  debug:
+    msg:  "test"
+

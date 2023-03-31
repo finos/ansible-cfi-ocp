@@ -52,3 +52,54 @@ The role defaults file can be found here.
     role/defaults/main.yml
 
 #### Google Cloud Platform
+
+# OCP GCP Structure
+
+## Variables
+
+```
+# The fully qualified DNS name of the cluster
+dns_fqdn
+
+# The amount of required storage in GB
+storage_GB
+
+# The number of firewall rules available
+firewall_rules > 15
+
+# The number of compute CPUs required
+compute_cpu
+
+# The environment which we are deploying 
+enviroment = [Test, Prod]
+
+# The minimum number of forwarding rules 
+forwarding_rules >= 2 
+
+# The visibility of the cluster
+visibility = [Public, Private]
+
+# The minimum number of public IP addresses
+public_ip_num >= 3
+
+# The minimum number of VPCs 
+vpc_num = 1
+
+# The minimum number of VPC Networks
+vpc_ networks >= 2
+
+# The minimum number of VPC routers
+vpc_routers >= 1
+
+# The minimum number of VPC routes
+vpc_routes >= 2
+
+# The minimum number of VPC subnets
+vpc_subnets >= 2
+
+# The pull secret 
+pull_secret = ""
+
+# An optional ssh key to access the hosts
+ocp_ssh_key = "" (optional)
+```

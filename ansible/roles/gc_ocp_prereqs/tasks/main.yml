@@ -1,0 +1,34 @@
+---
+# tasks file for gc_ocp_install
+- name: Create DNS Zone
+  debug:
+    msg:  "test"
+
+- name: Enable GCP API's
+  debug:
+    msg:  "test"
+
+- name: Check GCP quotas
+  debug:
+    msg:  "test"
+
+- name: Create service account
+  debug:
+    msg:  "test"
+
+- name: Create service account permissions
+  debug:
+    msg:  "test"
+
+- name: Create Installation VM
+  debug:
+    msg:  "test"
+
+- name: Pull Installer
+  debug:
+    msg:  "test"
+
+- name: Create Object bucket
+  debug:
+    msg:  "test"
+

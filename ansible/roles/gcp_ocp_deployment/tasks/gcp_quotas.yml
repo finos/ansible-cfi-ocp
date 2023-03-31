@@ -1,3 +1,0 @@
-- name: Placeholder debug stub.
-  ansible.builtin.debug:
-    msg: "Setup the GCP Quotas"
