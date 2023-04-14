@@ -1,16 +1,69 @@
 ---
 # tasks file for gc_ocp_install
-- name: Pull the installer
-  debug:
-    msg:  "test"
 
 - name: Create the VM
   debug:
     msg:  "test"
 
-- name: Run OCP installer
-  debug:
-    msg:  "test"
+- name: Downloading OCP4 Installer
+  get_url:
+    url: "{{ ocp_installer }}"
+    dest: /root/openshift-install-linux.tar.gz
+    mode: '0644'
+    force: true
+ 
+- name: Downloading OCP4 client
+  get_url:
+    url: "{{ ocp_client }}"
+    dest: /root/openshift-client-linux.tar.gz
+    mode: '0644'
+    force: true
+ 
+- name: Unarchiving OCP4 Installer
+  unarchive:
+    src: /root/openshift-install-linux.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+ 
+- name: Unarchiving OCP4 client
+  unarchive:
+    src: /root/openshift-client-linux.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+ 
+- name: Removing README files
+  file:
+    path: /usr/local/bin/README.md
+    state: absent
+ 
+- name: Create installation directory
+  file:
+    path: "/root/ocp-install-{{cluster_name}}"
+    state: directory
+ 
+- name: Render install-config template
+  template:
+    src: templates/install-config.yaml.j2
+    dest: "/root/ocp-install-{{cluster_name}}/install-config.yaml"
+ 
+- name: Deploy cluster
+  command: openshift-install create cluster --dir=/root/ocp-install-"{{cluster_name}}" --log-level=debug
+  async: 3600
+  poll: 0
+ 
+- name: Wait for bootstrapping to finish
+  shell: tail -n 200 /root/ocp-install-{{cluster_name}}/.openshift_install.log
+  register: result
+  until: result.stdout.find("Bootstrap status") != -1
+  retries: 200
+  delay: 10
+ 
+- name: Wait for installation to finish
+  shell: tail -n 100 /root/ocp-install-"{{cluster_name}}"/.openshift_install.log
+  register: result
+  until: result.stdout.find("Install complete!") != -1
+  retries: 300
+  delay: 10
 
 - name: Remove VM after installer
   debug:
@@ -19,4 +72,3 @@
 - name: Remove object store 
   debug:
     msg:  "test"
-
