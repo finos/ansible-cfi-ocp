@@ -1,2 +1,9 @@
 ---
 # vars file for gc_ocp_install
+pull_secret:
+ssh_public_key:
+ocp_base_domain: 
+gcp_project_id:
+gcp_region:
+ocp_installer: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-install-linux.tar.gz
+ocp_client: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz
