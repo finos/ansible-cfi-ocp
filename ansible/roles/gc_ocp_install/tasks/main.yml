@@ -38,28 +38,28 @@
  
 - name: Create installation directory
   file:
-    path: "/root/ocp-install-{{cluster_name}}"
+    path: "/root/ocp-install-ocp"
     state: directory
  
 - name: Render install-config template
   template:
     src: templates/install-config.yaml.j2
-    dest: "/root/ocp-install-{{cluster_name}}/install-config.yaml"
+    dest: "/root/ocp-install-ocp/install-config.yaml"
  
 - name: Deploy cluster
-  command: openshift-install create cluster --dir=/root/ocp-install-"{{cluster_name}}" --log-level=debug
+  command: openshift-install create cluster --dir=/root/ocp-install-ocp --log-level=debug
   async: 3600
   poll: 0
  
 - name: Wait for bootstrapping to finish
-  shell: tail -n 200 /root/ocp-install-{{cluster_name}}/.openshift_install.log
+  shell: tail -n 200 /root/ocp-install-ocp/.openshift_install.log
   register: result
   until: result.stdout.find("Bootstrap status") != -1
   retries: 200
   delay: 10
  
 - name: Wait for installation to finish
-  shell: tail -n 100 /root/ocp-install-"{{cluster_name}}"/.openshift_install.log
+  shell: tail -n 100 /root/ocp-install-ocp/.openshift_install.log
   register: result
   until: result.stdout.find("Install complete!") != -1
   retries: 300
