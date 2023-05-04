@@ -1,0 +1,8 @@
+---
+# tasks file for gc_ocp_uninstall
+- name: Removing OpenShift cluster
+  command: openshift-install destroy cluster --dir=/root/ocp-install-ocp --log-level=debug
+
+- name: Logs location
+  debug:
+    msg: Cluster Removed. Logs can be found in /root/ocp-install-ocp/.openshift_install.log

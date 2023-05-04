@@ -1,0 +1,13 @@
+---
+# tasks file for gc_ocp_postinstall
+- name: Create PCI/CIS profile
+  debug:
+    msg:  "test"
+
+- name: Install compliance operator
+  debug:
+    msg:  "test"
+
+- name: Checked for errors
+  debug:
+    msg:  "test"
