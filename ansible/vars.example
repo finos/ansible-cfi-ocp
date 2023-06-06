@@ -1,0 +1,60 @@
+# The fully qualified DNS name of the cluster
+dns_fqdn: "demo.local"
+
+# The amount of required storage in GB
+storage_GB: 20
+
+# The number of firewall rules available
+min_firewall_rules: 15
+
+# The number of compute CPUs required
+min_compute_cpu: 2
+
+# The number of compute CPUs available
+# compute_cpu
+
+# The environment which we are deploying 
+# can be [test,production]
+environment: "test"
+
+# The minimum number of forwarding rules 
+min_forwarding_rules: 2 
+
+# The number of forwarding rules available
+# forwarding_rules
+
+# The visibility of the cluster
+# visibility = [public, private]
+visibility: "public"
+
+# The minimum number of public IP addresses
+# public_ip_num >= 3
+min_public_ip_num: 3
+
+# The minimum number of VPCs 
+# vpc_num
+min_vpc_num: 1
+
+
+# The minimum number of VPC Networks
+# vpc_networks >= 2
+min_vpc_networks: 2
+
+# The minimum number of VPC routers
+# vpc_routers >= 1
+min_vpc_routers: 1
+
+# The minimum number of VPC routes
+# vpc_routes >= 2
+min_vpc_routes: 2
+
+# The minimum number of VPC subnets
+# vpc_subnets >= 2
+min_vpc_subnets: 2
+
+# The pull secret 
+pull_secret: ""
+
+
+# An optional ssh key to access the hosts
+ocp_ssh_key: "" (optional)
