@@ -137,7 +137,7 @@ pci-compliance-ocp4   DONE          NON-COMPLIANT
 pci-compliance-ocp4   DONE          NON-COMPLIANT
 ```
 
-9. Once the scans are complete the following command can be used to check the complaince scan results, when setting up the compliance scan object (step 7), we set the complaince operator to automatical remidate compliance failures. 
+9. Once the scans are complete, the following command can be used to check the compliance scan results. When setting up the compliance scan object (step 7), we set the compliance operator to automatically remediate compliance failures. 
 
 ```shell
 oc get ccr
