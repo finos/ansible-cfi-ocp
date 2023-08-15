@@ -167,7 +167,7 @@ ocp4-pci-dss-api-server-admission-control-plugin-noderestriction          PASS  
 ocp4-pci-dss-api-server-admission-control-plugin-scc                      PASS     medium
 ```
 
-Initially a number of the compliance checks will FAIL, many of them will be remediated automatically by the compliance operator. This remediation process can take sometime (hours). These remediations are actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
+Initially a number of the compliance checks will fail, and many of them will be remediated automatically by the compliance operator. This process may take hours to complete. These remediations are actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
 
 '''shell
 oc get co
