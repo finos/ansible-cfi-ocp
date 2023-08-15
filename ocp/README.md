@@ -22,7 +22,12 @@ We do provide examples of how some of these types of policies could implemented,
 
 In step 6 we have provided some guidance and examples on how to remediation some of the CIS controla. 
 
+## Require Policy Remediations
+
 Below is a list of the CIS and PCI-DSS policies that a user will have to investigate and decide how they should be implemented within their own organisation. 
+
+
+### CIS
 
 ```console
 
@@ -53,6 +58,9 @@ ocp4-cis-secrets-consider-external-storage          MANUAL   medium
 ocp4-cis-secrets-no-environment-variables           MANUAL   medium
 
 ```
+
+### PCI-DSS
+
 
 ```console
 
