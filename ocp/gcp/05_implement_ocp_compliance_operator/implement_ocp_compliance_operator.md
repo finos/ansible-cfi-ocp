@@ -100,7 +100,7 @@ rhcos4-moderate      57s
 rhcos4-nerc-cip      57s
 ```
 
-7. The next step is to set up the compliance scanning using the CIS and PCI-DSS profile, the default profile that is being used will run scans on a daily base and, where possible. auto-remiate any complaince issues.
+7. The next step is to set up the compliance scanning using the CIS and PCI-DSS profiles. The default profile that is being used will run scans on a daily base and, where possible, auto-remediate any compliance issues.
 
 ```shell
 oc create -f 03-scansetting-cis-ocp4-default.yaml
@@ -137,7 +137,7 @@ pci-compliance-ocp4   DONE          NON-COMPLIANT
 pci-compliance-ocp4   DONE          NON-COMPLIANT
 ```
 
-9. Once the scans are complete the following command can be used to check the complaince scan results, when setting up the compliance scan object (step 7), we set the complaince operator to automatical remidate compliance failures. 
+9. Once the scans are complete, the following command can be used to check the compliance scan results. When setting up the compliance scan object (step 7), we set the compliance operator to automatically remediate compliance failures. 
 
 ```shell
 oc get ccr
@@ -167,7 +167,7 @@ ocp4-pci-dss-api-server-admission-control-plugin-noderestriction          PASS  
 ocp4-pci-dss-api-server-admission-control-plugin-scc                      PASS     medium
 ```
 
-Initially a number of the compliance checks will FAIL, many of them will be remediated automatically by the compliance operator. This remediation process can take sometime (hours). These remediations are actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
+Initially a number of the compliance checks will fail, and many of them will be remediated automatically by the compliance operator. This process may take hours to complete. These remediations are actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
 
 '''shell
 oc get co
@@ -237,7 +237,7 @@ The OCP PCI policy consists of two policies
 - *ocp4-pci-dss* for Cluster polies
 - *ocp4-pci-dss-node* for Node polies
 
-As with the CIS policy the *oc get compliancecheckresults* command can be used to check for scan results, for example
+As with the CIS policy the `oc get compliancecheckresults` command can be used to check for scan results. For example
 
 ```bash
 
@@ -247,7 +247,7 @@ oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-pci-dss-
 
 ```
 
-Once any remediation have be made the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
+Once any remediation has been made, the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
 
 ```bash
 oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
