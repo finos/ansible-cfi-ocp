@@ -247,7 +247,7 @@ oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-pci-dss-
 
 ```
 
-Once any remediation have be made the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
+Once any remediation has been made, the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
 
 ```bash
 oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
