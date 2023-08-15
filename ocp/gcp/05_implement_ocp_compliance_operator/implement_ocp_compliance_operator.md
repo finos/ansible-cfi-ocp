@@ -100,7 +100,7 @@ rhcos4-moderate      57s
 rhcos4-nerc-cip      57s
 ```
 
-7. The next step is to set up the compliance scanning using the CIS and PCI-DSS profile, the default profile that is being used will run scans on a daily base and, where possible. auto-remiate any complaince issues.
+7. The next step is to set up the compliance scanning using the CIS and PCI-DSS profiles. The default profile that is being used will run scans on a daily base and, where possible, auto-remediate any compliance issues.
 
 ```shell
 oc create -f 03-scansetting-cis-ocp4-default.yaml
