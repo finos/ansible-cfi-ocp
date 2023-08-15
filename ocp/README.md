@@ -16,7 +16,7 @@ For each cloud provider documentation and working code will be provided to:
 5. Implement OCP Compliance Operator
 6. Manual Remediation of CIS Controls
 
-Using the above will provide an OCP Cluster which is compliant with most CIS and PCI-DSS Policies. There are a number of CIS and PCI-DSS policies that require a user to make local decisions on how the policy would be implemented, these are describe these as MANUAL. 
+Using the above will provide an OCP Cluster which is compliant with most CIS and PCI-DSS Policies. There are a number of CIS and PCI-DSS policies that require a user to make local decisions on how the policy would be implemented, these are described as MANUAL. 
 
 We do provide examples of how some of these types of policies could implemented, for example adding an identity provider or replacing the self signed certificates.
 
