@@ -1,24 +1,21 @@
-<img align="right" width="40%" src="https://www.finos.org/hubfs/FINOS/finos-logo/FINOS_Icon_Wordmark_Name_RGB_horizontal.png">
+[![FINOS - Incubating](https://cdn.jsdelivr.net/gh/finos/contrib-toolbox@master/images/badge-incubating.svg)](https://finosfoundation.atlassian.net/wiki/display/FINOS/Incubating)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6557/badge)](https://bestpractices.coreinfrastructure.org/projects/6557)
+[<img src="https://img.shields.io/badge/slack-@finos/compliant%20financial%20infrastructure-green.svg?logo=slack">](https://finos-lf.slack.com/messages/cfi/)
 
-# FINOS Software Project Blueprint
+<img src="https://github.com/finos/branding/blob/master/project-logos/active-project-logos/Compliant%20Financial%20Infrastructure%20Logo/Horizontal/2021_CFI_Logo_Horizontal.png?raw=true" width="450">
 
-Project blueprint is a GitHub repository template for all [Fintech Open Source Foundation (FINOS)](https://www.finos.org/) hosted GitHub repositories, contributed and maintained by FINOS as part of the [Open Developer Platform (ODP)](https://odp.finos.org) initiative.
 
-## How to use this blueprint
+# Compliant Financial Infrastructure
 
-Please follow https://odp.finos.org/docs/project-collaboration/#how-to-use-this-blueprint
+Compliant Financial Infrastructure (CFI) is a project that exists to accelerate the development, deployment and adoption of services provided for infrastructure in a way that meets common regulatory and internal security controls.
 
-## Blueprint preview
+This repo is used for IaC, doumentation and code examples to deploy Red Hat OpenShift to meet FINOS CFI policy as defined in the [Service Acceleratior](add link). Contributions to this repo are made through the CFI Reproducible Infrastructure Working Group. 
 
-A preview of the blueprint can be found [here](https://amazing-joliot-c42cde.netlify.app/). 
+## Reproducible Infrastructure Working Group [<img src="https://img.shields.io/badge/slack-@finos/cfi%20reproducible%20infrastructure-green.svg?logo=slack">](https://finos-lf.slack.com/messages/cfi-reproducible-infrastructure-wg)
 
-## Governance
-This blueprint implements https://community.finos.org/docs/governance/#open-source-software-projects
+This WG exists to develop, maintain, and document easily consumable infrastructure as code (IaC) which can be used as a base for deploying systems in highly-regulated environments.
 
-## License
+#TODO: add a best practices docuemnt for Ansible. 
+Detailed documentation regarding the process for developing and delivering IaC can be found [here](https://github.com/finos/compliant-financial-infrastructure/blob/docs/wg-readme/docs/terraform-module-best-practices.md).
 
-Copyright 2019 Fintech Open Source Foundation
-
-Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-SPDX-License-Identifier: [Apache-2.0](https://spdx.org/licenses/Apache-2.0)
+For more information go to the main [CFI repo](add link)
