@@ -237,7 +237,7 @@ The OCP PCI policy consists of two policies
 - *ocp4-pci-dss* for Cluster polies
 - *ocp4-pci-dss-node* for Node polies
 
-As with the CIS policy the *oc get compliancecheckresults* command can be used to check for scan results, for example
+As with the CIS policy the `oc get compliancecheckresults` command can be used to check for scan results. For example
 
 ```bash
 
