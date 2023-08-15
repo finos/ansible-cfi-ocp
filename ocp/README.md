@@ -20,7 +20,7 @@ Using the above will provide an OCP Cluster which is compliant with most CIS and
 
 We do provide examples of how some of these types of policies could implemented, for example adding an identity provider or replacing the self signed certificates.
 
-In step 6 we have provided some guidance and examples on how to remediation some of the CIS controla. 
+In step 6 we have provided some guidance and examples on how to remediate some of the CIS controls. 
 
 Below is a list of the CIS and PCI-DSS policies that a user will have to investigate and decide how they should be implemented within their own organisation. 
 
