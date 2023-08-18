@@ -16,13 +16,18 @@ For each cloud provider documentation and working code will be provided to:
 5. Implement OCP Compliance Operator
 6. Manual Remediation of CIS Controls
 
-Using the above will provide an OCP Cluster which is compliant with most CIS Policies. There are a number of CIS policies that require a user to make local decisions on how the policy would be implemented, CIS describe these as MANUAL. 
+Using the above will provide an OCP Cluster which is compliant with most CIS and PCI-DSS Policies. There are a number of CIS and PCI-DSS policies that require a user to make local decisions on how the policy would be implemented, these are described as MANUAL. 
 
 We do provide examples of how some of these types of policies could implemented, for example adding an identity provider or replacing the self signed certificates.
 
-In step 6 we have provided some guidance on remediation of CIS control. 
+In step 6 we have provided some guidance and examples on how to remediate some of the CIS controls. 
 
-Below is a list of the CIS policies that a user will have to investigate how they should be implemented within their own organisation. 
+## Require Policy Remediations
+
+Below is a list of the CIS and PCI-DSS policies that a user will have to investigate and decide how they should be implemented within their own organisation. 
+
+
+### CIS
 
 ```console
 
@@ -51,5 +56,49 @@ ocp4-cis-scc-limit-process-id-namespace             MANUAL   medium
 ocp4-cis-scc-limit-root-containers                  MANUAL   medium
 ocp4-cis-secrets-consider-external-storage          MANUAL   medium
 ocp4-cis-secrets-no-environment-variables           MANUAL   medium
+
+```
+
+### PCI-DSS
+
+
+```console
+
+NAME                                                                STATUS   SEVERITY
+ocp4-pci-dss-accounts-restrict-service-account-tokens                MANUAL   medium
+ocp4-pci-dss-accounts-unique-service-account                         MANUAL   medium
+ocp4-pci-dss-file-groupowner-proxy-kubeconfig                        MANUAL   medium
+ocp4-pci-dss-file-owner-proxy-kubeconfig                             MANUAL   medium
+ocp4-pci-dss-general-apply-scc                                       MANUAL   medium
+ocp4-pci-dss-general-configure-imagepolicywebhook                    MANUAL   medium
+ocp4-pci-dss-general-default-namespace-use                           MANUAL   medium
+ocp4-pci-dss-general-default-seccomp-profile                         MANUAL   medium
+ocp4-pci-dss-general-namespaces-in-use                               MANUAL   medium
+ocp4-pci-dss-rbac-limit-cluster-admin                                MANUAL   medium
+ocp4-pci-dss-rbac-limit-secrets-access                               MANUAL   medium
+ocp4-pci-dss-rbac-pod-creation-access                                MANUAL   medium
+ocp4-pci-dss-rbac-wildcard-use                                       MANUAL   medium
+ocp4-pci-dss-scc-drop-container-capabilities                         MANUAL   medium
+ocp4-pci-dss-scc-limit-ipc-namespace                                 MANUAL   medium
+ocp4-pci-dss-scc-limit-net-raw-capability                            MANUAL   medium
+ocp4-pci-dss-scc-limit-network-namespace                             MANUAL   medium
+ocp4-pci-dss-scc-limit-privilege-escalation                          MANUAL   medium
+ocp4-pci-dss-scc-limit-privileged-containers                         MANUAL   medium
+ocp4-pci-dss-scc-limit-process-id-namespace                          MANUAL   medium
+ocp4-pci-dss-scc-limit-root-containers                               MANUAL   medium
+ocp4-pci-dss-secrets-consider-external-storage                       MANUAL   medium
+ocp4-pci-dss-secrets-no-environment-variables                        MANUAL   medium
+ocp4-pci-dss-audit-log-forwarding-enabled                            FAIL     medium
+ocp4-pci-dss-configure-network-policies-namespaces                   FAIL     high
+ocp4-pci-dss-file-integrity-exists                                   FAIL     medium
+ocp4-pci-dss-file-integrity-notification-enabled                     FAIL     medium
+ocp4-pci-dss-idp-is-configured                                       FAIL     medium
+ocp4-pci-dss-kubeadmin-removed                                       FAIL     medium
+ocp4-pci-dss-node-master-partition-for-var-log-kube-apiserver        MANUAL   medium
+ocp4-pci-dss-node-master-partition-for-var-log-oauth-apiserver       MANUAL   medium
+ocp4-pci-dss-node-master-partition-for-var-log-openshift-apiserver   MANUAL   medium
+ocp4-pci-dss-node-worker-partition-for-var-log-kube-apiserver        MANUAL   medium
+ocp4-pci-dss-node-worker-partition-for-var-log-oauth-apiserver       MANUAL   medium
+ocp4-pci-dss-node-worker-partition-for-var-log-openshift-apiserver   MANUAL   medium
 
 ```

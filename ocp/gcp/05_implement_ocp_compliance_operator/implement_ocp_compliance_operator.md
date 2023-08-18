@@ -100,10 +100,11 @@ rhcos4-moderate      57s
 rhcos4-nerc-cip      57s
 ```
 
-7. The next step is to set up the compliance scanning using the CIS profile, the default profiles that is being used will run scans on a daily base and, where possible. auto-remiate any complaince issues.
+7. The next step is to set up the compliance scanning using the CIS and PCI-DSS profiles. The default profile that is being used will run scans on a daily base and, where possible, auto-remediate any compliance issues.
 
 ```shell
 oc create -f 03-scansetting-cis-ocp4-default.yaml
+oc create -f 04-scansetting-pci-ocp4-default.yaml
 ```
 
 8. The creation of the scan object will trigger the initial compliance scan to take please against the CIS compliance profile, to check that the compliance scan is running use the following command: 
@@ -113,21 +114,30 @@ oc get compliancesuite -w
 ```
 
 ```console
-NAME                  PHASE       RESULT
-cis-compliance-ocp4   LAUNCHING   NOT-AVAILABLE
-cis-compliance-ocp4   LAUNCHING   NOT-AVAILABLE
-cis-compliance-ocp4   LAUNCHING   NOT-AVAILABLE
-cis-compliance-ocp4   RUNNING     NOT-AVAILABLE
-cis-compliance-ocp4   RUNNING     NOT-AVAILABLE
-cis-compliance-ocp4   RUNNING     NOT-AVAILABLE
+NAME                  PHASE         RESULT
+cis-compliance-ocp4   RUNNING       NOT-AVAILABLE
+pci-compliance-ocp4   RUNNING       NOT-AVAILABLE
+pci-compliance-ocp4   RUNNING       NOT-AVAILABLE
+pci-compliance-ocp4   PENDING       NOT-AVAILABLE
+pci-compliance-ocp4   LAUNCHING     NOT-AVAILABLE
+pci-compliance-ocp4   RUNNING       NOT-AVAILABLE
+cis-compliance-ocp4   RUNNING       NOT-AVAILABLE
+cis-compliance-ocp4   RUNNING       NOT-AVAILABLE
 cis-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
+pci-compliance-ocp4   RUNNING       NOT-AVAILABLE
+pci-compliance-ocp4   RUNNING       NOT-AVAILABLE
+pci-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
 cis-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
 cis-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
 cis-compliance-ocp4   DONE          NON-COMPLIANT
 cis-compliance-ocp4   DONE          NON-COMPLIANT
+pci-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
+pci-compliance-ocp4   AGGREGATING   NOT-AVAILABLE
+pci-compliance-ocp4   DONE          NON-COMPLIANT
+pci-compliance-ocp4   DONE          NON-COMPLIANT
 ```
 
-9. Once the scan is complete the following command can be used to check the complaince scan results, when setting up the compliance scan object (step 7), we set the complaince operator to automatical remidate compliance failures. 
+9. Once the scans are complete, the following command can be used to check the compliance scan results. When setting up the compliance scan object (step 7), we set the compliance operator to automatically remediate compliance failures. 
 
 ```shell
 oc get ccr
@@ -137,37 +147,34 @@ An extract of the oc get ccr command can be seen below.
 
 
 ```console
-NAME                                                                           STATUS   SEVERITY
-ocp4-cis-accounts-restrict-service-account-tokens                              MANUAL   medium
-ocp4-cis-accounts-unique-service-account                                       MANUAL   medium
-ocp4-cis-api-server-admission-control-plugin-alwaysadmit                       PASS     medium
-ocp4-cis-api-server-admission-control-plugin-alwayspullimages                  PASS     high
-ocp4-cis-api-server-admission-control-plugin-namespacelifecycle                PASS     medium
-ocp4-cis-api-server-admission-control-plugin-noderestriction                   PASS     medium
-ocp4-cis-api-server-admission-control-plugin-scc                               PASS     medium
-ocp4-cis-api-server-admission-control-plugin-securitycontextdeny               PASS     medium
-ocp4-cis-api-server-admission-control-plugin-serviceaccount                    PASS     medium
-ocp4-cis-api-server-anonymous-auth                                             PASS     medium
-ocp4-cis-api-server-api-priority-gate-enabled                                  PASS     medium
-ocp4-cis-api-server-audit-log-maxbackup                                        PASS     low
-ocp4-cis-api-server-audit-log-maxsize                                          PASS     medium
-ocp4-cis-api-server-audit-log-path                                             PASS     high
-ocp4-cis-api-server-auth-mode-no-aa                                            PASS     medium
-ocp4-cis-api-server-auth-mode-node                                             PASS     medium
-ocp4-cis-api-server-auth-mode-rbac                                             PASS     medium
-ocp4-cis-api-server-basic-auth                                                 PASS     medium
-ocp4-cis-api-server-bind-address                                               PASS     low
-ocp4-cis-api-server-client-ca                                                  PASS     medium
-ocp4-cis-api-server-encryption-provider-cipher                                 FAIL     medium
-ocp4-cis-api-server-encryption-provider-config                                 FAIL     medium
+NAME                                                                     STATUS   SEVERITY
+ocp4-cis-scc-limit-container-allowed-capabilities                         PASS     medium
+ocp4-cis-scc-limit-ipc-namespace                                          MANUAL   medium
+ocp4-cis-scc-limit-net-raw-capability                                     MANUAL   medium
+ocp4-cis-scc-limit-network-namespace                                      MANUAL   medium
+ocp4-cis-scc-limit-privilege-escalation                                   MANUAL   medium
+ocp4-cis-scc-limit-privileged-containers                                  MANUAL   medium
+ocp4-cis-scc-limit-process-id-namespace                                   MANUAL   medium
+ocp4-cis-scc-limit-root-containers                                        MANUAL   medium
+ocp4-cis-secrets-consider-external-storage                                MANUAL   medium
+ocp4-cis-secrets-no-environment-variables                                 MANUAL   medium
+ocp4-pci-dss-accounts-restrict-service-account-tokens                     MANUAL   medium
+ocp4-pci-dss-accounts-unique-service-account                              MANUAL   medium
+ocp4-pci-dss-api-server-admission-control-plugin-alwaysadmit              PASS     medium
+ocp4-pci-dss-api-server-admission-control-plugin-alwayspullimages         PASS     high
+ocp4-pci-dss-api-server-admission-control-plugin-namespacelifecycle       PASS     medium
+ocp4-pci-dss-api-server-admission-control-plugin-noderestriction          PASS     medium
+ocp4-pci-dss-api-server-admission-control-plugin-scc                      PASS     medium
 ```
 
-Initially a number of the compliance checks will FAIL, many of them will be remediated automatically by the compliance operator. This remediation process can take sometime (hours). These remediation a actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
+Initially a number of the compliance checks will fail, and many of them will be remediated automatically by the compliance operator. This process may take hours to complete. These remediations are actioned by the OCP cluster operators, using the following command the progress of these cluster operators can be seen.
 
 '''shell
 oc get co
 ```
 Below is an example of the output of this command.
+
+#todo - update with new output when update to 4.13 takes place
 
 ```console
 NAME                                       VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE
@@ -223,7 +230,24 @@ oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-cis-node
 oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-cis-node-worker,compliance.openshift.io/check-status=FAIL
 ```
 
-Once any remediation have be made the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
+### The OCP PCI Benchmark
+
+The OCP PCI policy consists of two policies
+
+- *ocp4-pci-dss* for Cluster polies
+- *ocp4-pci-dss-node* for Node polies
+
+As with the CIS policy the `oc get compliancecheckresults` command can be used to check for scan results. For example
+
+```bash
+
+oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-pci-dss,compliance.openshift.io/check-status=MANUAL
+
+oc get compliancecheckresults -l compliance.openshift.io/scan-name=ocp4-pci-dss-node-worker,compliance.openshift.io/check-status=PASS
+
+```
+
+Once any remediation has been made, the following commands can be used to trigger a compliance rescan. A [script](rescan.sh) to trigger a rescan of all scans has been provided. 
 
 ```bash
 oc annotate compliancescans/ocp4-cis compliance.openshift.io/rescan=
@@ -234,3 +258,4 @@ oc annotate compliancescans/ocp4-cis-node-worker compliance.openshift.io/rescan=
 ```
 
 The compliance operator will auto-remediate all CIS policies with the exception of those policies that the CIS define as requiring manual rediation. In the next section we will address these [manual remediations](/gcp/06_remediation_of_manual_CIS_controls/Remediation_of_manual_CIS_controls.md).
+
