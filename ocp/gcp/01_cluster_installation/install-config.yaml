@@ -29,5 +29,5 @@ platform:
     projectID: finos-cfi
     region: europe-west2
 publish: External
-fips: true  # >>>> add line to enable FIPS <<<<
+# fips: true  # >>>> add line to enable FIPS <<<<
 pullSecret: # >>>> REDACTED PULL SECRET <<<<
