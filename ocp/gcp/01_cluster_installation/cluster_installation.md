@@ -60,4 +60,4 @@ Status:
     172.30.0.0/16
 ```
 
-The next step of the installation process is to set up an identity provider. An example using [HTPASSWD](/gcp/02_htpasswd_identity_provider/htpasswd_implementation.md) has been provided. OCP supports a number of identity providers, more detail can be found [here](https://docs.openshift.com/container-platform/4.10/authentication/understanding-identity-provider.html)
+The next step of the installation process is to set up an identity provider. An example using [HTPASSWD](/gcp/02_htpasswd_identity_provider/htpasswd_implementation.md) has been provided. OCP supports a number of identity providers, more detail can be found [here](https://docs.openshift.com/container-platform/4.12/authentication/understanding-identity-provider.html)
