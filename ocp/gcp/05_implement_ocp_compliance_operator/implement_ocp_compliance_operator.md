@@ -178,38 +178,38 @@ Below is an example of the output of this command.
 
 ```console
 NAME                                       VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE
-authentication                             4.12.3    True        True          False      76m     APIServerDeploymentProgressing: deployment/apiserver.openshift-oauth-apiserver: 1/3 pods have been updated to the latest generation
-baremetal                                  4.12.3    True        False         False      3h51m   
-cloud-controller-manager                   4.12.3    True        False         False      3h56m   
-cloud-credential                           4.12.3    True        False         False      3h57m   
-cluster-autoscaler                         4.12.3    True        False         False      3h51m   
-config-operator                            4.12.3    True        False         False      3h53m   
-console                                    4.12.3    True        False         False      76m     
-csi-snapshot-controller                    4.12.3    True        False         False      3h52m   
-dns                                        4.12.3    True        False         False      3h51m   
-etcd                                       4.12.3    True        False         False      3h50m   
-image-registry                             4.12.3    True        False         False      3h43m   
-ingress                                    4.12.3    True        False         False      3h42m   
-insights                                   4.12.3    True        False         False      3h33m   
-kube-apiserver                             4.12.3    True        True          False      3h38m   NodeInstallerProgressing: 2 nodes are at revision 9; 1 nodes are at revision 10
-kube-controller-manager                    4.12.3    True        False         False      3h49m   
-kube-scheduler                             4.12.3    True        False         False      3h49m   
-kube-storage-version-migrator              4.12.3    True        False         False      56s     
-machine-api                                4.12.3    True        False         False      3h48m   
-machine-approver                           4.12.3    True        False         False      3h51m   
-machine-config                             4.12.3    True        False         False      3h51m   
-marketplace                                4.12.3    True        False         False      3h51m   
-monitoring                                 4.12.3    True        False         False      3h31m   
-network                                    4.12.3    True        False         False      3h53m   
-node-tuning                                4.12.3    True        False         False      3h51m   
-openshift-apiserver                        4.12.3    True        True          False      3h38m   APIServerDeploymentProgressing: deployment/apiserver.openshift-apiserver: 1/3 pods have been updated to the latest generation
-openshift-controller-manager               4.12.3    True        False         False      3h51m   
-openshift-samples                          4.12.3    True        False         False      3h49m   
-operator-lifecycle-manager                 4.12.3    True        False         False      3h52m   
-operator-lifecycle-manager-catalog         4.12.3    True        False         False      3h52m   
-operator-lifecycle-manager-packageserver   4.12.3    True        False         False      29s     
-service-ca                                 4.12.3    True        False         False      3h53m   
-storage                                    4.12.3    True        True          False      3h52m   GCPPDCSIDriverOperatorCRProgressing: GCPPDDriverControllerServiceControllerProgressing: Waiting for Deployment to deploy pods
+authentication                             4.10.3    True        True          False      76m     APIServerDeploymentProgressing: deployment/apiserver.openshift-oauth-apiserver: 1/3 pods have been updated to the latest generation
+baremetal                                  4.10.3    True        False         False      3h51m   
+cloud-controller-manager                   4.10.3    True        False         False      3h56m   
+cloud-credential                           4.10.3    True        False         False      3h57m   
+cluster-autoscaler                         4.10.3    True        False         False      3h51m   
+config-operator                            4.10.3    True        False         False      3h53m   
+console                                    4.10.3    True        False         False      76m     
+csi-snapshot-controller                    4.10.3    True        False         False      3h52m   
+dns                                        4.10.3    True        False         False      3h51m   
+etcd                                       4.10.3    True        False         False      3h50m   
+image-registry                             4.10.3    True        False         False      3h43m   
+ingress                                    4.10.3    True        False         False      3h42m   
+insights                                   4.10.3    True        False         False      3h33m   
+kube-apiserver                             4.10.3    True        True          False      3h38m   NodeInstallerProgressing: 2 nodes are at revision 9; 1 nodes are at revision 10
+kube-controller-manager                    4.10.3    True        False         False      3h49m   
+kube-scheduler                             4.10.3    True        False         False      3h49m   
+kube-storage-version-migrator              4.10.3    True        False         False      56s     
+machine-api                                4.10.3    True        False         False      3h48m   
+machine-approver                           4.10.3    True        False         False      3h51m   
+machine-config                             4.10.3    True        False         False      3h51m   
+marketplace                                4.10.3    True        False         False      3h51m   
+monitoring                                 4.10.3    True        False         False      3h31m   
+network                                    4.10.3    True        False         False      3h53m   
+node-tuning                                4.10.3    True        False         False      3h51m   
+openshift-apiserver                        4.10.3    True        True          False      3h38m   APIServerDeploymentProgressing: deployment/apiserver.openshift-apiserver: 1/3 pods have been updated to the latest generation
+openshift-controller-manager               4.10.3    True        False         False      3h51m   
+openshift-samples                          4.10.3    True        False         False      3h49m   
+operator-lifecycle-manager                 4.10.3    True        False         False      3h52m   
+operator-lifecycle-manager-catalog         4.10.3    True        False         False      3h52m   
+operator-lifecycle-manager-packageserver   4.10.3    True        False         False      29s     
+service-ca                                 4.10.3    True        False         False      3h53m   
+storage                                    4.10.3    True        True          False      3h52m   GCPPDCSIDriverOperatorCRProgressing: GCPPDDriverControllerServiceControllerProgressing: Waiting for Deployment to deploy pods
 ```
 
 ### The OCP CIS Benchmark

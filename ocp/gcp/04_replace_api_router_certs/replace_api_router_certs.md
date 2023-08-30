@@ -92,12 +92,12 @@ oc get ingresscontroller default -n openshift-ingress-operator -o jsonpath='{.st
 
 ```console
 NAME              VERSION    AVAILABLE    PROGRESSING   DEGRADED   SINCE    MESSAGE 
-kube-apiserver    4.12.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
-kube-apiserver    4.12.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
-kube-apiserver    4.12.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
-kube-apiserver    4.12.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 11 
-kube-apiserver    4.12.3     True         True          False      102m    NodeInstallerProgressing: 2 nodes are at revision 9; 1 nodes are at revision 11 
-kube-apiserver    4.12.3     True         False         False      122m 
+kube-apiserver    4.10.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
+kube-apiserver    4.10.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
+kube-apiserver    4.10.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 10 
+kube-apiserver    4.10.3     True         True          False      98m     NodeInstallerProgressing: 3 nodes are at revision 9; 0 nodes have achieved new revision 11 
+kube-apiserver    4.10.3     True         True          False      102m    NodeInstallerProgressing: 2 nodes are at revision 9; 1 nodes are at revision 11 
+kube-apiserver    4.10.3     True         False         False      122m 
 ```
 
 
