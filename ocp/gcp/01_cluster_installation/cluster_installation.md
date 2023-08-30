@@ -8,7 +8,7 @@ It is possile for OCP to be installed into a disconnected / air-gapped environme
 
 The following provides an overview of the steps needed to install OCP on GCP, to meet the requirements of the service accelerator customisation needs to be made both at install time and as a day two change. To make the changes at install time we will use the [Installing a Cluster on GCP with Customisations](https://docs.openshift.com/container-platform/4.12/installing/installing_gcp/installing-gcp-customizations.html) installation method.
 
-Following are the high level steps to complete OCP installation, including the service accelerator polices to implement [FIPS cryptography](https://docs.openshift.com/container-platform/4.12/installing/installing-fips.html) and [OVNKubernetes Container Network Interface (CNI) plugin](https://docs.openshift.com/container-platform/4.12/networking/ovn_kubernetes_network_provider/about-ovn-kubernetes.html#about-ovn-kubernetes). It is planned that in the future code will be added to this CFI project to automate these steps. 
+Following are the high level steps to complete OCP installation, including [OVNKubernetes Container Network Interface (CNI) plugin](https://docs.openshift.com/container-platform/4.12/networking/ovn_kubernetes_network_provider/about-ovn-kubernetes.html#about-ovn-kubernetes). It is planned that in the future code will be added to this CFI project to automate these steps. 
 
 1. Setup the [GCP project](https://docs.openshift.com/container-platform/4.12/installing/installing_gcp/installing-gcp-account.html) ready for the OCP installation. This includes:
     - Creating the GCP project Folder
@@ -25,7 +25,7 @@ Following are the high level steps to complete OCP installation, including the s
 ```shell
 ./openshift-install create install-config --dir=/Users/*home*/ocp_clusters/<cluster_name>
 ```
-  - Edit the install-config YAML file to implement FIPS and OVNKubernetes, here is an example [config yaml](install-config.yaml) 
+  - Edit the install-config YAML file to implement OVNKubernetes, here is an example [config yaml](install-config.yaml) 
   - Run the OCP installer to create the cluster. Here is an example command
 
 ```shell
@@ -41,7 +41,7 @@ export KUBECONFIG=/Users/*home*/ocp_clusters/<cluster_name>/auth/kubeconfig
 ```
 
 
-FIPS compliance is managed via the OpenShift Compliance Operator, which will be discussed later. To confirm that the OVNKubernetes SDN has been implemeted log into the cluster and run the following commands.
+To confirm that the OVNKubernetes SDN has been implemeted log into the cluster and run the following commands.
 
 ```shell
 oc describe network.config/cluster
