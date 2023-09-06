@@ -4,7 +4,7 @@
 
 The OpenShift (OCP) Installer supports two installation methods, Installer Provisioned Infrastructure(IPI) and User Provisioned Infrastructure(UPI). IPI is an opinionated automated installation, this is the installation menthod that will be used. UPI gives users more flexibility to install OCP on pre-provisioned infrastructure, for example an on-premises installation where a firm's IT standards and policies prevent the use of an opinionated and automated installation. More details on OpenShift Installation can be found [here](https://docs.openshift.com/container-platform/4.12/installing/index.html).
 
-It is possile for OCP to be installed into a disconnected / air-gapped environment or be configured to have no public endpoints. To meet the current service accelerator requirements this is not required, the following instructions will implement a cluster that is internet connected and has public end-points. 
+It is possible for OCP to be installed into a disconnected / air-gapped environment or be configured to have no public endpoints. To meet the current service accelerator requirements this is not required, the following instructions will implement a cluster that is internet connected and has public end-points. 
 
 The following provides an overview of the steps needed to install OCP on GCP, to meet the requirements of the service accelerator customisation needs to be made both at install time and as a day two change. To make the changes at install time we will use the [Installing a Cluster on GCP with Customisations](https://docs.openshift.com/container-platform/4.12/installing/installing_gcp/installing-gcp-customizations.html) installation method.
 
